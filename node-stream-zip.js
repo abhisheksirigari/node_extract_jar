@@ -2,7 +2,7 @@ const StreamZip = require('node-stream-zip');
 var mkdir = require('mkdirp');
 
 const zip = new StreamZip({
-    file: 'some.jar',
+    file: 'somejarorzipfile.jar',
     storeEntries: true,
     skipEntryNameValidation: false
 });
@@ -12,7 +12,9 @@ zip.on('ready', () => {
     console.log('Entries read: ' + zip.entriesCount);
     for (const entry of Object.values(zip.entries())) {
         const desc = entry.isDirectory ? 'directory' : `${entry.size} bytes`;
-        // console.log(`Entry =  ${entry.name}: ${desc}`);
+        
+        console.log(`Entry =  ${entry.name}: ${desc}`);
+        // somejarorzipfile.jar -- if it contains a views folder inside to get all .json files extracted
         if (entry.name.indexOf('views') !== -1 && entry.name.indexOf('.json') !== -1) {
             console.log(`File entry file : ` + entry.name);
             
@@ -21,6 +23,7 @@ zip.on('ready', () => {
             // console.log("The content of views/json is: " + zipDotTxtContents);
 
             setTimeout(function(efile) {
+                // if folder doesnt exist
                 mkdir.sync(extractToDirectory);
                 zip.extract(efile, extractToDirectory, err => {
                     console.log(err ? 'Extract error ' + efile.split('/')[1] : 'Extracted ' + efile.split('/')[1]);
