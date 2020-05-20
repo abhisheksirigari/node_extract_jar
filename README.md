@@ -8,6 +8,7 @@ or
 
 ## Step1:
 npm install node-stream-zip --save
+##
 npm install mkdirp@latest --save
 
 ## Step2: run below command in commandline
