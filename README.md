@@ -6,11 +6,9 @@ npm install
 
 or
 
-## Step2:
-npm install node-stream-zip
+## Step1:
+npm install node-stream-zip --save
+npm install mkdirp@latest --save
 
-## Step2:
-npm install node-stream-zip
-
-## Step 
-node node-stream-zip.js
+## Step2: run below command in commandline
+node node-stream-zip.js 
