@@ -13,4 +13,4 @@ npm install node-stream-zip
 npm install node-stream-zip
 
 ## Step 
-node node_extract_jar.js
+node node-stream-zip.js
