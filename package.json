@@ -1,0 +1,22 @@
+{
+    "name": "jarfile",
+    "version": "2.0.0",
+    "description": "Get information about a jar file",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/limulus/jarfile.git"
+    },
+    "keywords": [
+        "jar",
+        "jarfile",
+        "java",
+        "jvm",
+        "unjar"
+    ],
+    "author": "Abhishek Sirigari",
+    "license": "MIT",
+    "homepage": "https://github.com/limulus/jarfile",
+    "dependencies": {
+        "node-stream-zip": "^1.11.1"        
+    }
+}
